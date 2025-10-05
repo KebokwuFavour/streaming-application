@@ -10,7 +10,7 @@ defineProps({
         <span v-else><slot /></span>
     </label> -->
 
-    <label class="form-label fw-medium small text-dark">
+    <label class="form-label fw-medium small text-white">
         <span v-if="value">{{ value }}</span>
         <span v-else><slot /></span>
     </label>

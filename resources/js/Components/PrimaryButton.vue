@@ -12,7 +12,7 @@ defineProps({
         <slot />
     </button> -->
 
-    <button :type="type" class="btn btn-primary fw-semibold text-uppercase px-4 py-2" :disabled="$attrs.disabled">
+    <button :type="type" class="btn btn-info fw-semibold text-uppercase px-4 py-2" :disabled="$attrs.disabled">
         <slot />
     </button>
 </template>

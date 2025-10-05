@@ -30,7 +30,8 @@ const submit = () => {
         <template #logo>
             <!-- <AuthenticationCardLogo /> -->
             <a class="navbar-brand fw-bold fs-4 text-primary" href="#">
-                <i class="bi bi-camera-reels-fill me-2"></i> StreamX
+                <i class="bi bi-camera-reels-fill me-2"></i> Bunma
+                <!-- <img src="logo.svg" alt="Bunma Logo" class="d-inline-block align-text-top text-center" style="height: 80px; width: 180px;" /> -->
             </a>
         </template>
 
@@ -173,20 +174,20 @@ const submit = () => {
                     <label class="form-check-label ms-2" for="terms">
                         I agree to the
                         <!-- <a target="_blank" :href="route('terms.show')" class="text-decoration-underline small text-secondary">Terms of Service</a> -->
-                        <a href="#" class="text-decoration-underline small text-secondary">Terms of Service</a>
+                        <a href="#" class="text-decoration-underline small text-info">Terms of Service</a>
                         and
                         <!-- <a target="_blank" :href="route('policy.show')" class="text-decoration-underline small text-secondary">Privacy Policy</a> -->
-                        <a href="#" class="text-decoration-underline small text-secondary">Privacy Policy</a>
+                        <a href="#" class="text-decoration-underline small text-info">Privacy Policy</a>
                     </label>
                 </div>
                 <InputError class="text-danger mt-1" :message="form.errors.terms" />
             </div>
 
             <div class="d-flex justify-content-between align-items-center mt-4">
-                <Link :href="route('login')" class="text-decoration-none small">
+                <Link :href="route('login')" class="text-decoration-none small text-info">
                     Already registered?
                 </Link>
-                <PrimaryButton class="btn btn-primary ms-auto" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <PrimaryButton class="btn btn-info ms-auto" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Register
                 </PrimaryButton>
             </div>

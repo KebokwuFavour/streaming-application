@@ -65,7 +65,9 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    // 'timezone' => 'UTC',
+    // 'timezone' => date_default_timezone_get(), // this sets the timezone to the server's default timezone
+    'timezone' => env('APP_TIMEZONE', 'UTC'), // set via .env file, default to 'UTC' if not set
 
     /*
     |--------------------------------------------------------------------------

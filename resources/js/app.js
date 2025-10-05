@@ -1,4 +1,5 @@
-import './bootstrap';
+// import './bootstrap';
+
 // import '../css/app.css'; // Commenting out default Tailwind CSS
 
 // import 'bootstrap/dist/css/bootstrap.css';
@@ -9,10 +10,10 @@ import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 
-// // Import Bootstrap 5 styles and JS (bundle includes Popper)
-import 'bootstrap/dist/css/bootstrap.min.css'
+// // // Import Bootstrap 5 styles and JS (bundle includes Popper)
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+// import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 

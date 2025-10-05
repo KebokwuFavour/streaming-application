@@ -35,8 +35,9 @@ const submit = () => {
     <AuthenticationCard>
         <template #logo>
             <!-- <AuthenticationCardLogo /> -->
-            <a class="navbar-brand fw-bold fs-4 text-primary" href="#">
-                <i class="bi bi-camera-reels-fill me-2"></i> StreamX
+            <a class="navbar-brand fw-bold fs-4 text-info" href="#">
+                <i class="bi bi-camera-reels-fill me-2"></i> Bunma
+                <!-- <img src="logo.svg" alt="Bunma Logo" class="d-inline-block align-text-top text-center" style="height: 80px; width: 180px;" /> -->
             </a>
         </template>
 
@@ -133,7 +134,7 @@ const submit = () => {
                     <Link
                         v-if="canResetPassword"
                         :href="route('password.request')"
-                        class="text-decoration-none small"
+                        class="text-decoration-none small text-info"
                     >
                         Forgot your password?
                     </Link>
@@ -147,7 +148,7 @@ const submit = () => {
                     </Link> -->
                 <!-- </div> -->
                 <PrimaryButton
-                    class="btn btn-primary ms-auto"
+                    class="btn btn-info ms-auto"
                     :class="{ 'opacity-25': form.processing }"
                     :disabled="form.processing"
                 >
@@ -159,7 +160,7 @@ const submit = () => {
                 <Link
                         v-if="canResetPassword"
                         :href="route('register')"
-                        class="text-decoration-underline text-primary small"
+                        class="text-decoration-underline text-info small"
                     >
                         Not yet Registered?
                     </Link>

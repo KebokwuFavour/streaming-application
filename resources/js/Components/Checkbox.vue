@@ -41,3 +41,13 @@ const proxyChecked = computed({
         class="form-check-input"
     />
 </template>
+
+<style scoped>
+.form-check-input {
+    border-color: blue;
+}
+.form-check-input:checked {
+    background-color: blue;
+    border-color: blue;
+}
+</style>
