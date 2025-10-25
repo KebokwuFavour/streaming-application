@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\TicketController;
 use App\Models\User;
-use Illuminate\Container\Attributes\Auth;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -30,29 +30,27 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/streams', function () {
-        $user = auth()->user();
+        // get the authenticated user
+        $user = Auth::user();
 
-        // // Ensure the user has a ticket
-        // $user->tickets()->updateOrCreate(
-        //     [], // no condition → always update/create their ticket
-        //     ['expires_at' => now()->addMinutes(5)]
-        // );
-
-        if ($user->hasActiveTicket()) {
+        // if ($user->hasActiveTicket()) {
             // return redirect(route('streams'));
             return Inertia::render('Streams');
-        }
+        // }
 
+        // return redirect(route('tickets'));
         
-        return redirect(route('tickets'));
-        // return Inertia::render('Tickets');
     })->name('streams');
-    // Route::get('/tickets', function () {
-    //     // return Inertia::render('Dashboard');
-    //     return Inertia::render('Tickets');
-    // })->name('tickets');
 
+    // Route for verifying ticket payments
     Route::post('/tickets/verify', [TicketController::class, 'verify']);
+
+    // Route for the talks page
+    Route::post('/talks', function() {
+        return Inertia::render('Talks');
+    });
+
+    // Route for the video player page
     Route::get('/video-player', function () {
         return Inertia::render('VideoPlayer');
     })->name('video-player');

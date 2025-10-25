@@ -16,11 +16,8 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     {{-- bootstrap 5 css --}}
-    {{--
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    --}}
-
 
     <!-- Library / Plugin Css Build -->
     <link rel="stylesheet" href="assets/css/core/libs.min.css" />
@@ -53,20 +50,18 @@
     {{-- <!-- Rtl Css -->
     <link rel="stylesheet" href="assets/css/rtl.min.css@v=5.3.0.css" /> --}}
 
-    {{-- <!-- Google Font -->
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300&display=swap"
-        rel="stylesheet"> --}}
-
+        rel="stylesheet">
 
     <!-- Phosphor icons  -->
     <link rel="stylesheet" href="assets/vendor/phosphor-icons/Fonts/regular/style.css">
     <link rel="stylesheet" href="assets/vendor/phosphor-icons/Fonts/duotone/style.css">
 
     <link rel="stylesheet" href="assets/vendor/phosphor-icons/Fonts/fill/style.css">
-
 
     <link rel="stylesheet" href="assets/vendor/streamit-font/iconly.css">
 </head>
@@ -91,15 +86,19 @@
         {{-- Inertia pages --}}
         @inertia
 
-        {{-- bootstrap 5 js --}}
+        <!-- Library Bundle Script -->
         {{--
+        <script src="assets/js/core/libs.min.js"></script> --}}
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        {{-- bootstrap 5 js --}}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            crossorigin="anonymous"></script> --}}
+            crossorigin="anonymous"></script>
 
 
-        <!-- Library Bundle Script -->
-        <script src="assets/js/core/libs.min.js"></script>
         <!-- Plugin Scripts -->
 
         <!-- Sweet-alert Script -->
