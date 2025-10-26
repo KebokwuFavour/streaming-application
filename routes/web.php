@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\TicketController;
 use App\Models\User;
 use Illuminate\Foundation\Application;
@@ -45,8 +46,8 @@ Route::middleware([
     // Route for verifying ticket payments
     Route::post('/tickets/verify', [TicketController::class, 'verify']);
 
-    // Route for the talks page
-    Route::post('/talks', function() {
+    // Route for the talks/conversation page
+    Route::get('/talks', function() {
         return Inertia::render('Talks');
     });
 

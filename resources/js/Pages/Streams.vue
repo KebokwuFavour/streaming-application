@@ -2,12 +2,10 @@
 import VideosDisplay from '@/Components/VideosDisplay.vue';
 import Footer from '@/Components/Footer.vue';
 import NavBar from '@/Components/NavBar.vue';
-import { Head, Link } from '@inertiajs/vue3';
-import useRouter from "@router";
+import { Head, Link, router } from '@inertiajs/vue3';
 import axios from "axios";
 import { ref } from 'vue';
 
-const router = useRouter();
 
 const email = ref("");
 const amount = ref(5000); // amount in NGN (₦5000 for example)
@@ -50,8 +48,8 @@ const payWithPaystack = (() => {
 
             // // reload the page
             // router.reload();
-            router.push('/talks');
-            // window.location.href = '/streams';
+            // router.push('/talks');
+            window.location.href = '/talks';
         })
         .catch((err) => {
             console.error(err);
