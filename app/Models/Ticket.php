@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ticket extends Model
 {
     // mass assignable attributes
-    protected $fillable = ['user_id', 'expires_at'];
+    protected $fillable = ['user_id', 'movie_id', 'expires_at'];
 
     // cast expires_at to a datetime (Carbon instance)
     protected $casts = [

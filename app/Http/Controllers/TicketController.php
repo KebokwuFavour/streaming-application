@@ -32,13 +32,18 @@ class TicketController extends Controller
 
 
         
-        $user = $request->user();
+
+        $user = $request->user(); // get authenticated user making this request
+        $movieId = $request->movieId; // get movie ID from request
 
         // Issue ticket (5-mins validity for example)
-        $user->tickets()->updateOrCreate(
-            ['user_id' => $user->id], // lookup condition
-            // ['expires_at' => now()->addDay()], // values to update
-            ['expires_at' => now()->addMinutes(5)], // values to update
+        $user->tickets()->create(
+            [
+                'user_id' => $user->id,
+                'movie_id' => $movieId,
+                'expires_at' => now()->addMinutes(5), // 5-min ticket
+                // 'expires_at' => now()->addDay(), // 1-day ticket
+            ], // values to update
         );
 
         return response()->json(['status' => 'success']);

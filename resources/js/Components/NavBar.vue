@@ -1,5 +1,13 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
+import { onMounted } from "vue";
+import { usePage } from "@inertiajs/vue3";
+
+const $page  = usePage();
+
+onMounted(() => {
+  console.log($page.props);
+});
 </script>
 
 <template>
@@ -39,9 +47,15 @@ import { Link } from "@inertiajs/vue3";
                 </Link>
             </li>
 
-            <li class="nav-item" v-if="$page.props.auth.user || !$page.props.auth.user">
+            <!-- <li class="nav-item" v-if="$page.props.auth.user || !$page.props.auth.user">
                 <Link href="/tickets" class="nav-link" :class="{ active: $page.url === '/tickets' }">
                     My Tickets
+                </Link>
+            </li> -->
+
+            <li class="nav-item" v-if="$page.props.auth.user && $page.props.userTickets.length > 0">
+                <Link href="/talks" class="nav-link" :class="{ active: $page.url === '/talks' }">
+                    Chat Room
                 </Link>
             </li>
             
@@ -84,8 +98,7 @@ import { Link } from "@inertiajs/vue3";
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                 <li>
                   <Link
-                    :href="route('streams')"
-                    class="dropdown-item" :class="{ active: $page.url === '/streams' }"
+                    href="/streams" class="dropdown-item" :class="{ active: $page.url === '/streams' }"
                   >
                     Streams
                   </Link>

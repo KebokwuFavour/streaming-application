@@ -21,26 +21,20 @@ Route::get('/suggest', function () {
     return Inertia::render('Suggest');
 })->name('suggest');
 
-Route::get('/tickets', function () {
-    return Inertia::render('Tickets');
-})->name('tickets');
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+    
+    // // tickets route
+    // Route::get('/tickets', function () {
+    //     return Inertia::render('Tickets');
+    // })->name('tickets');
+
+    // streams route
     Route::get('/streams', function () {
-        // get the authenticated user
-        $user = Auth::user();
-
-        // if ($user->hasActiveTicket()) {
-            // return redirect(route('streams'));
-            return Inertia::render('Streams');
-        // }
-
-        // return redirect(route('tickets'));
-        
+        return Inertia::render('Streams');
     })->name('streams');
 
     // Route for verifying ticket payments
@@ -49,10 +43,10 @@ Route::middleware([
     // Route for the talks/conversation page
     Route::get('/talks', function() {
         return Inertia::render('Talks');
-    });
+    })->name('talks');
 
     // Route for the video player page
-    Route::get('/video-player', function () {
+    Route::get('/video/play', function () {
         return Inertia::render('VideoPlayer');
     })->name('video-player');
 });
