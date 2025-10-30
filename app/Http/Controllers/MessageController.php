@@ -11,6 +11,7 @@ class MessageController extends Controller
     public function index()
     {
         return Message::with('user')->latest()->take(50)->get()->reverse()->values();
+        // return Message::with('user')->latest()->take(50)->where('created_at', '=', today())->get()->reverse()->values();
     }
 
     public function store(Request $request)

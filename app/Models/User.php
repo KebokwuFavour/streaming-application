@@ -76,13 +76,6 @@ class User extends Authenticatable
     // Check if user has an active ticket
     public function hasActiveTicket()
     {
-        // dd([
-        //     'user_id' => $this->id,
-        //     'expires_at' => $this->tickets()->latest()->first()?->expires_at,
-        //     'now' => now(),
-        //     // 'comparison' => $this->expires_at->isFuture(),
-        // ]);
-        // return $this->tickets()->latest()->first()?->isActive() ?? false;
         return $this->tickets()
         ->where('expires_at', '>', now())
         ->exists();

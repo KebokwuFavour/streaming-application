@@ -34,7 +34,7 @@ class TicketController extends Controller
         
 
         $user = $request->user(); // get authenticated user making this request
-        $movieId = $request->movieId; // get movie ID from request
+        $movieId = $request->movieId; // get movie ID from the request
 
         // Issue ticket (5-mins validity for example)
         $user->tickets()->create(
@@ -46,6 +46,7 @@ class TicketController extends Controller
             ], // values to update
         );
 
+        // return success status reponse in JSON format
         return response()->json(['status' => 'success']);
     }
 }

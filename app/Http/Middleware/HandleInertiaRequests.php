@@ -38,7 +38,7 @@ class HandleInertiaRequests extends Middleware
     {
         return [
             ...parent::share($request),
-            'userTickets' => Auth::user()->tickets ?? collect(),
+            'userTickets' => Auth::user()->tickets ?? collect(), // Get the tickets of an authenticated user
         ];
     }
 }

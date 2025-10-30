@@ -109,9 +109,13 @@ onMounted(() => {
 </script>
 
 <template>
+  <!-- tab title -->
   <Head title="Streams Page" />
 
+  <!-- Main Content -->
   <main class="main-content bg-light min-vh-100">
+
+    <!-- application navbar -->
     <NavBar />
 
     <div class="container-fluid py-5">

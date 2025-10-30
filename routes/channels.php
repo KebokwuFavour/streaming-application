@@ -11,3 +11,8 @@ Broadcast::channel('chat', function ($user) {
     return Auth::check();
     // return $user != null;
 });
+
+Broadcast::channel('typing', function ($user) {
+    return Auth::check();
+    // return $user != null;
+});
